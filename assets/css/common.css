@@ -1,0 +1,58 @@
+/* STYLE */
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+}
+.common-inner {
+    max-width: 1408px;
+    padding: 0 104px;
+    margin: 0 auto;
+}
+.scroll-fix { overflow: hidden; }
+
+.header .logo-area .link-logo,
+.sc-search .input-area::before,
+.section .group-list .link-teams .count::after, 
+.section .btn-arrow,
+.sc-support .link-join::after,
+.footer .btn-site::after,
+.sc-search .group-mobile .btn-submit,
+.sc-search .group-mobile .check-item .list::before {
+    background-image: url(../images/sp_common_pc.png);
+    background-repeat: no-repeat;
+    background-size: 328px 205px;
+}
+
+/* RESPONSIVE */
+/* 작은 화면 pc 태블릿 가기전까지 
+    1400~1025
+*/
+@media (max-width:1230px) {
+    .header .logo-area .link-logo,
+    .header .btn-menu,
+    .header .btn-close,
+    .header .mobile-area .gnb-item .arrow {
+        background-image: url(../images/sp_common_mobile.png);
+        background-size: 195px 181px;
+    }
+}
+/* 태블릿 1024~ [768] : 최소를 기준으로*/
+@media (max-width: 1024px) {
+    .common-inner { padding: 0 50px; }
+
+    .section .btn-arrow,
+    .sc-support .link-join::after,
+    .sc-search .group-mobile .btn-search::after,
+    .sc-search .group-mobile .btn-close {
+        background-image: url(../images/sp_common_mobile.png);
+        background-size: 195px 181px;
+    }
+}
+/* 모바일 767~[320] */
+@media (max-width: 767px) {
+    .common-inner { padding: 0 22px; }
+}

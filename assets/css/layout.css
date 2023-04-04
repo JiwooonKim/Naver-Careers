@@ -1,0 +1,276 @@
+@import url(./fonts.css);
+@import url(./reset.css);
+@import url(./common.css);
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
+}
+.header .inner {
+    display: flex;
+    max-width: 1920px;
+    height: 64px;
+    padding: 0 104px 0 98px;
+    font-size: 17px;
+    margin: 0 auto;
+}
+.header .logo-area {
+    display: flex;
+    align-items: center;
+}
+.header .logo-area .link-logo { 
+    display: block; height: 100%; 
+    background-position: -105px 0px;
+    width: 223px;
+    height: 35px;
+}
+.header .gnb-area {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    margin-left: 29px;
+}
+.header .gnb-area .gnb-list {
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.36px;
+}
+.header .gnb-area .gnb-list .gnb {
+    height: 64px;
+    line-height: 64px;
+    position: relative;
+    display: block;
+    padding: 0 10px;
+}
+.header .gnb-area .gnb-list .gnb:hover::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: calc(50% - 10px);
+    width: calc(100% - 20px);
+    height: 1px;
+    background-color: #000;
+}
+.header .gnb-area .gnb-list .sub-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+    padding: 15px 0;
+}
+.header .gnb-area .gnb-list .sub-box .sub-list {
+    display: flex;
+    flex-direction: column;
+}
+.header .gnb-area .sub-box .sub-item {
+    padding: 3px 13px;
+    line-height: 32px;
+}
+.header .gnb-area .sub-box .sub { position: relative; }
+.header .gnb-area .sub-box .sub:hover::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #000;
+}
+.header.on::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 0;
+    background-color: rgba(255, 255, 255, 0.98);;
+    width: 100%;
+    height: 182px;
+    z-index: 9;
+}
+.header .gnb-item.on .sub-box { display: block; }
+.header .sub-bg.on { display: block; }
+/* MOBILE */
+.header .btn-area {
+    display: none;
+    align-items: center;
+}
+.header .btn-area .btn-menu {
+    background-position: -85px -28px;
+    width: 20px;
+    height: 14px;
+}
+.header .btn-area .btn-menu.btn-close {
+    background-position: -85px -49px;
+    width: 15px;
+    height: 15px;
+}
+.header .mobile-area {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    right: -100%;
+    background: #fff;
+    height: 100vh;
+    overflow: scroll;
+    z-index: 50;
+    transition: 0.3s;
+}
+.header .mobile-area .inner {
+    display: flex;
+    flex-direction: column;
+}
+.header .mobile-area .gnb-list { 
+    line-height: 46px;    
+    padding: 11px 0 9px;
+    position: relative;
+}
+.header .mobile-area .gnb-item::after { 
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 22px;
+    right: 22px;
+    height: 1px;
+    background-color: #d0d0d0;
+}
+.header .mobile-area .gnb-item a { display: block; }
+.header .mobile-area .gnb-item .arrow { 
+    display: inline-block;
+    background-position: -136px -49px;
+    width: 10px;
+    height: 6px;
+    vertical-align: top;
+    margin: 20px 0 0 8px;
+}
+.header .mobile-area .gnb {
+    font-size: 22px;
+    padding: 0 22px;
+    letter-spacing: -0.44px;
+}
+.header .mobile-area .sub-box {
+    display: none;
+    padding: 3px 22px 15px;
+}
+.header .mobile-area .sub-list {
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.36px;
+}
+.header .mobile-area .sub-item { margin-top: 13px; }
+
+.header .mobile-area.active { right: 0; }
+.header .mobile-area .gnb-item.active .gnb { background-color: #f2f2f2; }
+.header .mobile-area .gnb-item.active .sub-box { display: block; }
+
+/* FOOTER */
+.footer { background-color: #f2f2f2; }
+.footer .common-inner {
+    display: flex;
+    align-items: center;
+    padding: 25px 104px 25px 98px;
+}
+.footer .logo {
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: -0.32px;
+}
+.footer .policy {
+    margin-left: 30px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.28px;
+    color: #909090;
+    font-weight: bold;
+}
+.footer .site-area { 
+    margin-left: auto;
+    position: relative;
+}
+.footer .btn-site {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+    height: 42px;
+    line-height: 42px;
+    text-align: left;
+    border-bottom: 1px solid #000;
+} 
+.footer .btn-site::after {
+    content: "";
+    display: inline-block;
+    background-position: -122px -93px;
+    width: 10px;
+    height: 6px;
+    z-index: 100;
+}
+.footer .btn-site.active {
+    padding: 0 12px;
+    background-color: #fff;
+    border-bottom: inherit;
+}
+.footer .site-list {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    background: #fff;
+    font-size: 18px;
+    line-height: 42px;
+    z-index: 20;
+}
+.footer .site-list.active { display: block; }
+.footer .site-item { padding: 0 12px; }
+.footer .site-item:hover { background-color: #f2f2f2; }
+.footer .site-ite .link-site { display: block; }
+
+
+/* 작은 화면 pc 태블릿 가기전까지 
+    1400~1025
+*/
+@media (max-width:1230px) {
+    .header .inner {
+        justify-content: space-between;
+        padding: 0 22px;
+        height: 60px;
+        line-height: 60px;
+    }
+    .header .gnb-area, .header .util-area { display: none; }
+    .header .logo-area .link-logo {
+        background-position: 0 0;
+        width: 160px;
+        height: 23px;
+    }
+    .header .btn-area { display: flex; }
+}
+/* 태블릿 1024~ [768] : 최소를 기준으로*/
+@media (max-width: 1024px) {
+    .footer .common-inner {
+        padding: 25px 50px 25px 50px;
+    }
+}
+/* 모바일 767~[320] */
+@media (max-width: 767px) {
+    .footer .common-inner { 
+        display: inherit; 
+        padding: 25px 22px 29px;
+    }
+    .footer .logo { 
+        display: inline-block;
+        vertical-align: top;
+        font-size: 15px;
+        line-height: 22px;
+        letter-spacing: -0.3px;
+    }
+    .footer .policy { display: inline-block; margin-left: 21px; }
+    .footer .btn-site { 
+        display: flex; width: 100%; 
+        line-height: 40px;
+        margin-top: 15px;
+        font-size: 12px;
+        border-bottom: 1px solid #b4b4b4;;
+    }
+    .footer .site-item { font-size: 12px; }
+}

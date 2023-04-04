@@ -1,0 +1,584 @@
+.container { overflow-x: hidden; padding-top: 64px; }
+
+/* SC-VISUAL */
+.sc-visual .visual-item .img-box { height: 100%; }
+.sc-visual .visual-item .img-box video {
+    height: 544px;
+    object-fit: cover;
+    width: 100%;
+}
+.sc-visual .visual-item .text-box {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+.sc-visual .visual-item .visual-title {
+    opacity: 0;
+    overflow: hidden;
+    font-size: 100px;
+    line-height: 1.2;
+    letter-spacing: -2.4px;
+    text-align: center;
+    font-weight: 800;
+    white-space: nowrap;
+    color: #fff;
+    text-shadow: 6px 6px 18px rgb(0 0 0 /16%);
+}
+.sc-visual .visual-slide .swiper-slide-active .visual-title {
+    animation: wave-in 0.3s ease-out forwards, fade 0.8s linear forwards;
+    animation-delay: 0.8s;
+}
+.sc-visual .visual-item .visual-title .mo-br { display: none; }
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes wave-in {
+    0% { width: 0%; }
+    50% { width: 50%; }
+    100% { width: 100%; }
+}
+@keyframes fade-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* SC-Search  */
+.sc-search { width: 100%; }
+.sc-search .search-wrap { position: relative; }
+.sc-search .group-pc {
+    display: flex;
+    align-items: center;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 0; right: 0;
+    background: #fff;
+    z-index: 20;
+}
+.sc-search .group-pc .cate {
+    font-size: 14px;
+    line-height: 54px;
+    color: #000;
+    font-weight: bold;
+}
+.sc-search .group-pc .input-area::before {
+    content: '';
+    display: inline-block;
+    background-position: -245px -40px;
+    width: 18px;
+    height: 18px;
+    margin: 0 28px 0 21px;
+}
+.sc-search .group-pc .input-area {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.sc-search .group-pc .input-area .input-text {
+    flex: 1;
+    padding-right: 20px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 54px;
+    margin-left: 9px;
+}
+.sc-search .group-pc .input-area .input-text::placeholder {
+    color: #d0d0d0;
+    font-weight: bold;
+}
+.sc-search .group-pc .select-area {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.sc-search .group-pc .select-area .select-box {
+    flex: 1;
+    padding: 0 25px 0 9px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 54px;
+    letter-spacing: -0.3px;
+    background-image: url(../images/ico_arrow_down.png);
+    background-position: calc(100% - 10px) center;
+    background-repeat: no-repeat;
+    background-size: 8px 5px;
+    color: #d0d0d0;
+    background-color: #fff;
+    appearance:none;
+}
+.sc-search .group-pc .select-area .select-box option {
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    font-weight: normal;
+    color: #000;
+}
+.sc-search .group-pc .select-area .select-box option[disabled] { display: none; }
+
+.sc-search .group-pc .select-area .select-box.active { background-image: url(../images/ico_arrow_up.png); }
+.sc-search .group-pc .btn-submit {
+    width: 97px;
+    height: 54px;
+    line-height: 54px;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+}
+.sc-search .group-pc .btn-submit:hover {
+    background-color: #16ef72;
+    color: #000;
+}
+/* MOBILE */
+.sc-search .group-mobile { display: none; }
+.sc-search .group-mobile .btn-search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-top: 22px;
+    padding: 10px 45px 10px 10px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.28px;
+    color: #696868;
+    background-color: #ebebeb;
+    text-align-last: left;
+}
+.sc-search .group-mobile .btn-search::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    background-position: -140px -125px;
+    width: 19px;
+    height: 19px;
+}
+.sc-search .group-mobile .wrap { 
+    display: none; 
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: 100;
+    background: #fff;
+    padding: 60px 32px;
+    overflow-y: scroll;
+}
+.sc-search .group-mobile .input-area {
+    display: flex;
+    position: relative;
+}
+.sc-search .group-mobile .input-text {
+    width: 100%;
+    line-height: 26px;
+    letter-spacing: -0.28px;
+    text-align: left;
+    border-bottom: 1px solid #d0d0d0;
+    padding: 6px 30px 6px 0;
+}
+.sc-search .group-mobile .input-text::placeholder { color: #d0d0d0; }
+.sc-search .group-mobile .btn-submit {
+    position: absolute;
+    top: 50%; right: 0;
+    transform: translateY(-50%);
+    background-position: -268px -40px;
+    width: 15px;
+    height: 15px;
+}
+.sc-search .group-mobile .check-area {
+    font-family: 'NanumSquare';
+    margin-top: 45px;
+}
+.sc-search .group-mobile .check-area .title { 
+    font-size: 14px; 
+    font-weight: bold; 
+    line-height: 26px;
+    letter-spacing: -0.28px;
+}
+.sc-search .group-mobile .check-item { 
+    margin-top: 14px;
+    font-weight: normal;
+}
+.sc-search .group-mobile .check-item .list::before {
+    content: '';
+    display: inline-block;
+    background-position: -136px -93px;
+    width: 8px;
+    height: 5px;
+    padding-right: 19px;
+}
+.sc-search .group-mobile .check-item label {
+    position: relative;
+    padding-left: 19px;
+    line-height: 26px;
+    letter-spacing: -0.28px;
+}
+.sc-search .group-mobile .check-item label::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 0;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.sc-search .group-mobile input:checked+label::before { background: #000; }
+
+.sc-search .group-mobile .check-item .check-list {
+    display: none;
+    padding-left: 20px;
+}
+.sc-search .group-mobile .check-item .list {
+    display: flex;
+    align-items: center;
+    line-height: 26px;
+    letter-spacing: -0.28px;
+}
+.sc-search .group-mobile .btn-close {
+    position: absolute;
+    top: 24px;
+    left: 22px;
+    background-position: -110px -28px;
+    width: 14px;
+    height: 14px;
+}
+.sc-search .group-mobile .btn-reset {
+    position: relative;
+    margin-top: 42px;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: -0.24px;
+}
+.sc-search .group-mobile .btn-reset::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #000;
+}
+/* active 상태 */
+.sc-search .group-mobile .wrap.active { display: block; }
+.sc-search .group-mobile .check-item .check-list.active { display: block; }
+
+/* headline */
+.headline {
+    font-size: 64px;
+    line-height: 71px;
+    letter-spacing: -0.64px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+/* SC-TEAMS */
+.section.teams {
+    padding: 126px 0 89px;
+    background-color: #fafafa;
+}
+.section .group-title .desc {
+    display: inline;
+    vertical-align: middle;
+    padding-right: 30px;
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: -0.44px;
+    font-weight: bold;
+}
+/* link-more */
+.link-more {
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    letter-spacing: -0.36px;
+    border-bottom: 1px solid #000;
+}
+.section .common-inner { position: relative; }
+.section .group-list { margin-top: 70px; }
+.section .group-list .teams-list {
+    display: flex;
+    flex-direction: column;
+}
+.section .group-list .link-teams {
+    display: block;
+    padding: 20px 0;
+    font-size: 22px;
+}
+.section .group-list .common-inner {
+    display: flex;
+    align-items: center;
+}
+.section .group-list .link-teams:hover { background-color: #ebebeb; }
+.section .group-list .link-teams .title-area {
+    display: flex;
+    flex: 1;
+}
+.section .group-list .link-teams .title {
+    font-size: 38px;
+    line-height: 60px;
+    letter-spacing: -0.34px;
+    font-weight: normal;
+}
+.section .group-list .link-teams .count {
+    position: relative;
+    margin: 13px 0 0 18px;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+}
+.section .group-list .link-teams .count::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -14px;
+    background-position: -176px -105px;
+    width: 9px;
+    height: 9px;
+}
+.section .group-list .link-teams .desc-area {
+    flex: 1;
+    padding-left: 15px;
+}
+.section .group-list .link-teams .desc {
+    font-size: 22px;
+    letter-spacing: -0.44px;
+}
+
+/* SECTION PEOPLE */
+.section.people { padding: 95px 0 112px; }
+.section.people .people-slide {
+    margin: 60px 0 0;
+    overflow: inherit;
+    padding-bottom: 68px;
+}
+.section.people .people-list .img-box {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 47%;
+}
+.section.people .people-list .img-box img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.section .people-list .sm-wrap {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.section .people-list .sm-wrap span { position: relative; }
+.section .people-list .sm-wrap span+span { margin-left: 12px; }
+.section .people-list .sm-wrap span+span::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 6px;
+    width: 1px;
+    height: 10px;
+    background-color: #000;
+}
+
+/* SECTION 공통 */
+.section .common-text { margin-top: 29px; }
+.section .common-text .title {
+    line-height: 36px;
+    font-size: 25px;
+    letter-spacing: -0.5px;
+    font-weight: bold;
+    padding-right: 26px;
+}
+.section .common-text .desc {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: -0.36px;
+    color: #000;
+}
+.section .btn-wrap {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    bottom: 0; right: 0;
+}
+.section .btn-arrow {
+    width: 33px;
+    height: 32px;
+}
+.section .btn-arrow.prev { background-position: -187px -172px; }
+.section .btn-arrow.prev.swiper-button-disabled { opacity: 0.6; }
+.section .btn-arrow.next { background-position: -113px -172px; }
+.section .btn-arrow.next.swiper-button-disabled { opacity: 0.6; }
+
+/* SECTION BENEFITS */
+.section.benefits .common-inner {  position: relative; }
+.section .benefits-slide {
+    margin-top: 60px;
+    padding-bottom: 68px;
+}
+.section.benefits .common-text .title { font-weight: normal; } 
+
+/* SC-SUPPORT */
+.sc-support { padding: 95px 0 102px; }
+.sc-support .headline {
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: -0.25px;
+}
+.sc-support .link-join {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.36px;
+}
+.sc-support .link-join::after {
+    content: '';
+    display: inline-block;
+    background-position: -76px -172px;
+    height: 32px;
+    width: 33px;
+    margin-left: 11px;
+    vertical-align: middle;
+}
+
+/* 작은 화면 pc 태블릿 가기전까지 
+    1400~1025
+*/
+@media (max-width:1230px) {
+    .container { padding-top: 60px; }
+    .pc-br { display: none; }
+
+    .sc-visual .visual-item .visual-title { font-size: 70px; }
+}
+
+/* 태블릿 1024~ [768] : 최소를 기준으로*/
+@media (max-width: 1024px) {
+    .sc-search .common-inner { padding: 0 22px; }
+
+    .headline {
+        margin-bottom: 11px;
+        font-size: 36px;
+        line-height: 50px;
+        letter-spacing: -0.7px;
+    }
+    .link-more { 
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: -0.24px;
+    }
+    .section.teams { padding: 80px 0 50px; }
+        
+    .section .group-title .desc {
+        padding-right: 20px;
+        margin-bottom: 9px;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.32px;
+    }
+
+    .section .group-list { margin-top: 29px; }
+    .section .group-list .link-teams .title { 
+        font-size: 24px;
+        line-height: 38px;
+        letter-spacing: -0.48px;
+    }
+    .section .group-list .link-teams .desc {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.32px;
+    }
+
+    .section.people { padding: 68px 0 56px; overflow-x: hidden; }
+    .section.people .people-slide {
+        margin: 25px 0 0;
+        padding-bottom: 46px;
+    }
+    .section .common-text { margin-top: 21px; }
+    .section .common-text .title {
+        padding-right: 20px;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.36px;
+    }
+
+    .section .common-text .desc {
+        margin-top: 3px;
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: -0.28px;
+    }
+
+    .section .benefits-slide {
+        padding-bottom: 46px;
+        margin: 25px 0 0;
+    }
+
+    .sc-support { padding: 71px 0 99px; }
+    .section .btn-arrow { width: 30px; height: 30px; }
+    .section .btn-arrow.prev { background-position: -165px -70px; }
+    .section .btn-arrow.next { background-position: -35px -90px; }
+
+    .sc-support .headline {
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: -0.25px;
+    }
+    .sc-support .link-join {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.32px;
+    }
+    .sc-support .link-join::after {
+        height: 31px;
+        width: 31px;
+        background-position: 0px -90px;
+    }
+}
+
+/* 모바일 767~[320] */
+@media (max-width: 767px) {
+    .section .group-list .common-inner {
+        flex-direction: column;
+        align-items: start;
+    }
+    .sc-visual .visual-item .img-box {
+        position: relative;
+        padding-bottom: 62.4%;
+    }
+    .sc-visual .visual-item .img-box video {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    .sc-visual .visual-item .visual-title { 
+        font-size: 40px;
+        line-height: 50px;
+        letter-spacing: -0.8px;
+    }
+    .sc-visual .visual-item .visual-title .mo-br { display: block; }
+
+    .sc-search .group-pc { display: none; }
+
+    .section .group-list .link-teams .desc-area { padding-left: 0; }
+
+    .sc-search .group-mobile { display: block; }
+    .section.people .people-list .img-box { padding-bottom: 100%; }
+
+    .section .group-list .link-teams .count {
+        margin: 4px 0 0 14px;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -0.28px;
+    }
+    .section .group-list .link-teams .count::after {
+        content: "";
+        position: absolute;
+        top: 1px;
+        width: 11px;
+        height: 11px;
+    }
+
+    .section.people .title-wrap .link-more { display: none; }
+}
